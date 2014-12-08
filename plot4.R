@@ -24,9 +24,9 @@ for(i in 3:9){
 png(file="plot4.png", width=480, height=480, units="px")
 par(mfrow=c(2, 2))
 with(sDat, {
-        hist(sDat$Global_active_power, col="red", main="", xlab="Global active power (kilowatts)", ylim=c(0, 1200))
+        plot(DatePosix, Global_active_power, type="l", ylab="Global Active Power", xlab="")
         plot(DatePosix, Voltage, type="l", ylab="Voltage", xlab="datetime")
-        plot(sDat$DatePosix, sDat$Sub_metering_1, type="l", ylab="Energy sub metering", xlab=" ")
+        plot(DatePosix, Sub_metering_1, type="l", ylab="Energy sub metering", xlab=" ")
         points(sDat$DatePosix, sDat$Sub_metering_2, type="l", col="red")
         points(sDat$DatePosix, sDat$Sub_metering_3, type="l", col="blue")
         legend("topright", col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lwd=2, bty="n")
